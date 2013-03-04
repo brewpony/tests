@@ -1,1 +1,5 @@
 .*.sw?
+_build
+MYMETA.json
+MYMETA.yml
+Build

@@ -13,14 +13,10 @@ my $builder = Module::Build->new(
     dist_version        => '0.01',
     include_dirs        => '',
     requires            => {
-        autodie     => 0,
-        'JSON::Any' => 0,
     },
     build_requires => {
         'Test::Most'           => 0,
-        'Test::JSON'           => 0,
         'Test::WWW::Mechanize' => '1.38',
-        'URL::Encode'          => 0,
     },
 );
 
