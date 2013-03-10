@@ -8,7 +8,7 @@ use Data::Dumper;
 my $base = $ENV{BREWPONY_TEST_URL} || 'http://brewpony.com';
 my $mech = Test::WWW::Mechanize->new;
 
-my @urls = qw{/ /pricing /checkout /faq /contact /featured-roasters /coming-soon /gift-pricing };
+my @urls = qw{/ /pricing /checkout /faq /contact /how-it-works /gift };
 
 my %checked = ();
 
@@ -33,11 +33,11 @@ for my $url (@urls) {
         next if $checked{$link};
 
         if ($link ~~ m/^http/) {
-            #$mech->get_ok($link);
+            $mech->get_ok($link);
             $checked{$link} = 1;
         } else {
             # relative link
-            #$mech->get_ok("$base$link");
+            $mech->get_ok("$base$link");
             $checked{"$base$link"} = 1;
         }
         my @images = $mech->find_all_images();
