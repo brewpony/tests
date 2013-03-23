@@ -8,7 +8,7 @@ use Data::Dumper;
 my $base = $ENV{BREWPONY_TEST_URL} || 'http://brewpony.com';
 my $mech = Test::WWW::Mechanize->new;
 
-my @urls = qw{/ /pricing /checkout /faq /contact /how-it-works /gift };
+my @urls = qw{/ /pricing /blog /checkout /my-account /faq /contact /how-it-works /gift };
 
 my %checked = ();
 
@@ -45,10 +45,13 @@ for my $url (@urls) {
             $mech->get_ok("$base$link");
             $checked{$link} = 1;
         }
+        $TODO = '';
         my @images = $mech->find_all_images();
 
         for my $image ( map { $_->url } @images ) {
             next if $checked{$image};
+
+            next if $link =~ m/\.(js|png|css)$/;
 
             # make sure each image actually exists!
             $mech->get_ok($image);
