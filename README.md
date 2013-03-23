@@ -16,4 +16,12 @@ With Module::Build :
 
 # Running the tests
 
-    prove -lrv *.t
+You can use prove:
+
+    prove -lrv t/
+
+or Module::Build
+
+    ./Build test
+
+which has less verbose output by default.
