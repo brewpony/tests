@@ -2,6 +2,8 @@
 
 These tests verify that brewpony.com doesn't look borked.
 
+[![Build Status](https://secure.travis-ci.org/brewpony/tests.png)](http://travis-ci.org/brewpony/tests)
+
 # Installing dependencies
 
 You will need Perl and Test::WWW::Mechanize, with the optional SSL-related CPAN modules also installed.
