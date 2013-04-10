@@ -12,8 +12,8 @@ script: "perl Build.PL; ./Build test"
 #     - master
 notifications:
   recipients:
-    - jonathan+tests@brewpony.com
+    - support+tests@brewpony.com
   email:
     on_success: change
-    on_failure: always
+    on_failure: change
 #env:
