@@ -13,6 +13,7 @@ my $builder = Module::Build->new(
     dist_version        => '0.01',
     include_dirs        => '',
     requires            => {
+        'Mozilla::CA'   => '20130114', # to test SSL links
     },
     build_requires => {
         'Test::Most'           => 0,
