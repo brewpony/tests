@@ -1,6 +1,8 @@
 # brewpony.com tests
 
-These tests verify that brewpony.com doesn't look borked.
+These tests verify that brewpony.com doesn't have broken links, broken images and non-standards-compliant HTML/CSS.
+It could do more in the future, but that is what it does now.
+
 
 [![Build Status](https://secure.travis-ci.org/brewpony/tests.png)](http://travis-ci.org/brewpony/tests)
 
