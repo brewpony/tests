@@ -13,7 +13,8 @@ script: "perl Build.PL; ./Build test"
 #     - master
 notifications:
   recipients:
-    - support+tests@brewpony.com
+    - ops+travis@brewpony.com
+    - jonathan+travis@brewpony.com
   email:
     on_success: change
     on_failure: change
