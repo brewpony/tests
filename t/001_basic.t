@@ -47,7 +47,7 @@ for my $url (@urls) {
             $checked{"$base$link"} = 1;
         }
         $TODO = '';
-        my @images = $mech->find_all_images();
+        my @images = grep { is_brewpony_link($_) } ($mech->find_all_images());
 
         for my $image ( map { $_->url } @images ) {
             next if $checked{$image};
