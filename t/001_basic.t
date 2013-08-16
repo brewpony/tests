@@ -1,9 +1,11 @@
 #!/usr/bin/env perl
-use strict;
-use warnings;
+use 5.012;
 use Test::Most;
 use Test::WWW::Mechanize;
 use Data::Dumper;
+
+use lib 'lib';
+use Brewpony::Test qw/is_brewpony_link/;
 
 my $base = $ENV{BREWPONY_TEST_URL} || 'http://brewpony.com';
 my $mech = Test::WWW::Mechanize->new;
@@ -11,14 +13,6 @@ my $mech = Test::WWW::Mechanize->new;
 my @urls = qw{/ /pricing /blog /checkout /my-account /faq /contact /how-it-works /gift };
 
 my %checked = ();
-
-sub is_brewpony_link($) {
-    my ($link) = @_;
-    if ($link =~ m!https?://brewpony\.com!){
-        return 1;
-    };
-    return 0;
-}
 
 # Basic tests that verify the above URLs all exist and have non-broken links
 for my $url (@urls) {
